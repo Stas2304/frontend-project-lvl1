@@ -1,31 +1,31 @@
-import readlineSync from 'readline-sync';
+import {
+  greeting, getUserName, getRandomNumber, gameLogicMaker,
+} from '../src/index.js';
 
 const evenGame = () => {
-  console.log('Welcome to the Brain Games!');
+  const getEvenGameInfo = () => {
+    const gameQuestions = [];
+    const gameAnswers = [];
 
-  const userName = readlineSync.question('May I have your name? ');
-  console.log(`Hello, ${userName}!`);
+    for (let i = 0; i < 3; i += 1) {
+      const numberForGame = getRandomNumber();
+      gameQuestions.push(numberForGame);
 
-  console.log('Answer "yes" if the number is even, otherwise answer "no".');
-
-  for (let i = 0; i < 3; i += 1) {
-    const numberForGame = Math.round((Math.random() * 100));
-    const correctAnswer = numberForGame % 2 === 0 ? 'yes' : 'no';
-
-    console.log(`Question: ${numberForGame}`);
-    const userAnswer = readlineSync.question('Your answer: ');
-
-    if (correctAnswer !== userAnswer) {
-      const wrongAnswer = console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.
-Let's try again, ${userName}!`);
-
-      return wrongAnswer;
+      const correctAnswer = numberForGame % 2 === 0 ? 'yes' : 'no';
+      gameAnswers.push(correctAnswer);
     }
-    console.log('Correct!');
-  }
-  const congratulations = console.log(`Congratulations, ${userName}!`);
 
-  return congratulations;
+    return { gameQuestions, gameAnswers };
+  };
+
+  const gameInfo = getEvenGameInfo();
+  gameInfo.rules = 'Answer "yes" if the number is even, otherwise answer "no".';
+
+  greeting();
+
+  gameInfo.userName = getUserName();
+
+  gameLogicMaker(gameInfo);
 };
 
 export default evenGame;
