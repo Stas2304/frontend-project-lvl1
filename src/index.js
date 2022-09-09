@@ -8,7 +8,10 @@ export const getUserName = () => {
   return userName;
 };
 
-export const getRandomNumber = (max = 100) => Math.round((Math.random() * max));
+export const getRandomNumber = (min = 1, max = 100) => {
+  const randomNumber = Math.round((Math.random() * (max - min))) + min;
+  return randomNumber;
+};
 
 export const gameLogicMaker = (gameInfo) => {
   console.log(gameInfo.rules);

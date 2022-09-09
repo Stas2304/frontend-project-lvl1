@@ -10,7 +10,7 @@ const calcGame = () => {
 
     for (let i = 0; i < 3; i += 1) {
       const num1 = getRandomNumber();
-      const operator = operators[getRandomNumber(2)];
+      const operator = operators[getRandomNumber(0, 2)];
       const num2 = getRandomNumber();
 
       const question = `${num1} ${operator} ${num2}`;
