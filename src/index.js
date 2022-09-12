@@ -1,8 +1,8 @@
 import readlineSync from 'readline-sync';
 
-export const greeting = () => console.log('Welcome to the Brain Games!');
+const greeting = () => console.log('Welcome to the Brain Games!');
 
-export const getUserName = () => {
+const getUserName = () => {
   const userName = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${userName}!`);
   return userName;
@@ -13,8 +13,12 @@ export const getRandomNumber = (min = 1, max = 100) => {
   return randomNumber;
 };
 
-export const gameLogicMaker = (gameInfo) => {
-  console.log(gameInfo.rules);
+export const makeGameLogic = (gameInfo) => {
+  greeting();
+
+  const userName = getUserName();
+
+  console.log(gameInfo.gameRules);
 
   for (let i = 0; i < 3; i += 1) {
     const question = gameInfo.gameQuestions[i];
@@ -24,13 +28,13 @@ export const gameLogicMaker = (gameInfo) => {
     const correctAnswer = gameInfo.gameAnswers[i];
     if (correctAnswer !== userAnswer) {
       const wrongAnswer = console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.
-Let's try again, ${gameInfo.userName}!`);
+Let's try again, ${userName}!`);
 
       return wrongAnswer;
     }
     console.log('Correct!');
   }
-  const congratulations = console.log(`Congratulations, ${gameInfo.userName}!`);
+  const congratulations = console.log(`Congratulations, ${userName}!`);
 
   return congratulations;
 };

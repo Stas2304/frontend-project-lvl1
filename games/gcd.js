@@ -1,11 +1,10 @@
-import {
-  greeting, getUserName, getRandomNumber, gameLogicMaker,
-} from '../src/index.js';
+import { getRandomNumber, makeGameLogic } from '../src/index.js';
 
 const gcdGame = () => {
   const getgcdGameInfo = () => {
     const gameQuestions = [];
     const gameAnswers = [];
+    const gameRules = 'Find the greatest common divisor of given numbers.';
 
     const getGCD = (firstNum, SecondNum) => {
       let num1 = firstNum;
@@ -32,17 +31,12 @@ const gcdGame = () => {
       gameAnswers.push(String(correctAnswer));
     }
 
-    return { gameQuestions, gameAnswers };
+    return { gameQuestions, gameAnswers, gameRules };
   };
 
   const gameInfo = getgcdGameInfo();
-  gameInfo.rules = 'Find the greatest common divisor of given numbers.';
 
-  greeting();
-
-  gameInfo.userName = getUserName();
-
-  gameLogicMaker(gameInfo);
+  makeGameLogic(gameInfo);
 };
 
 export default gcdGame;

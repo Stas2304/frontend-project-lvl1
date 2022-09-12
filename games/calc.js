@@ -1,12 +1,11 @@
-import {
-  greeting, getUserName, getRandomNumber, gameLogicMaker,
-} from '../src/index.js';
+import { getRandomNumber, makeGameLogic } from '../src/index.js';
 
 const calcGame = () => {
   const getCalcGameInfo = () => {
     const operators = ['-', '+', '*'];
     const gameQuestions = [];
     const gameAnswers = [];
+    const gameRules = 'What is the result of the expression?';
 
     for (let i = 0; i < 3; i += 1) {
       const num1 = getRandomNumber();
@@ -27,17 +26,12 @@ const calcGame = () => {
       gameAnswers.push(String(answer));
     }
 
-    return { gameQuestions, gameAnswers };
+    return { gameQuestions, gameAnswers, gameRules };
   };
 
   const gameInfo = getCalcGameInfo();
-  gameInfo.rules = 'What is the result of the expression?';
 
-  greeting();
-
-  gameInfo.userName = getUserName();
-
-  gameLogicMaker(gameInfo);
+  makeGameLogic(gameInfo);
 };
 
 export default calcGame;

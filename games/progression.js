@@ -1,11 +1,10 @@
-import {
-  greeting, getUserName, getRandomNumber, gameLogicMaker,
-} from '../src/index.js';
+import { getRandomNumber, makeGameLogic } from '../src/index.js';
 
 const progressionGame = () => {
   const getProgressionGameInfo = () => {
     const gameQuestions = [];
     const gameAnswers = [];
+    const gameRules = 'What number is missing in the progression?';
 
     const getProgression = () => {
       const progression = [];
@@ -32,17 +31,12 @@ const progressionGame = () => {
       const question = progression.toString().replace(/,/g, ' ');
       gameQuestions.push(question);
     }
-    return { gameQuestions, gameAnswers };
+    return { gameQuestions, gameAnswers, gameRules };
   };
 
   const gameInfo = getProgressionGameInfo();
-  gameInfo.rules = 'What number is missing in the progression?';
 
-  greeting();
-
-  gameInfo.userName = getUserName();
-
-  gameLogicMaker(gameInfo);
+  makeGameLogic(gameInfo);
 };
 
 export default progressionGame;
