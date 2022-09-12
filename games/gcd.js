@@ -1,39 +1,39 @@
 import { getRandomNumber, makeGameLogic } from '../src/index.js';
 
-const gcdGame = () => {
-  const getgcdGameInfo = () => {
-    const gameQuestions = [];
-    const gameAnswers = [];
-    const gameRules = 'Find the greatest common divisor of given numbers.';
+const getGCD = (firstNum, SecondNum) => {
+  let num1 = firstNum;
+  let num2 = SecondNum;
+  let remainder;
 
-    const getGCD = (firstNum, SecondNum) => {
-      let num1 = firstNum;
-      let num2 = SecondNum;
-      let remainder;
-
-      do {
-        remainder = num1 % num2;
-        if (remainder !== 0) {
-          num1 = num2;
-          num2 = remainder;
-        }
-      } while (remainder !== 0);
-      return num2;
-    };
-
-    for (let i = 0; i < 3; i += 1) {
-      const numForGame1 = getRandomNumber();
-      const numForGame2 = getRandomNumber();
-      const question = `${numForGame1} ${numForGame2}`;
-      gameQuestions.push(question);
-
-      const correctAnswer = getGCD(numForGame1, numForGame2);
-      gameAnswers.push(String(correctAnswer));
+  do {
+    remainder = num1 % num2;
+    if (remainder !== 0) {
+      num1 = num2;
+      num2 = remainder;
     }
+  } while (remainder !== 0);
+  return num2;
+};
 
-    return { gameQuestions, gameAnswers, gameRules };
-  };
+const getgcdGameInfo = () => {
+  const gameQuestions = [];
+  const gameAnswers = [];
+  const gameRules = 'Find the greatest common divisor of given numbers.';
 
+  for (let i = 0; i < 3; i += 1) {
+    const numForGame1 = getRandomNumber();
+    const numForGame2 = getRandomNumber();
+    const question = `${numForGame1} ${numForGame2}`;
+    gameQuestions.push(question);
+
+    const correctAnswer = getGCD(numForGame1, numForGame2);
+    gameAnswers.push(String(correctAnswer));
+  }
+
+  return { gameQuestions, gameAnswers, gameRules };
+};
+
+const gcdGame = () => {
   const gameInfo = getgcdGameInfo();
 
   makeGameLogic(gameInfo);
