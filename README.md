@@ -4,7 +4,7 @@
 
 Info about brain-calc game (package install, game start, win and lose):
 
-Info about brain-even game (package install, game start, win and lose)(https://asciinema.org/a/rXdfr3zquTuiC5WcbCTz4Iysp?speed=3)
+[![Info about brain-even game (package install, game start, win and lose)](https://asciinema.org/a/rXdfr3zquTuiC5WcbCTz4Iysp.svg)](https://asciinema.org/a/rXdfr3zquTuiC5WcbCTz4Iysp?speed=3)
 
 Info about brain-gcd game (package install, game start, win and lose):
 
