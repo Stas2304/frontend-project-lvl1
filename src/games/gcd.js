@@ -1,4 +1,5 @@
-import { getRandomNumber, makeGameLogic } from '../index.js';
+import { makeGameLogic, roundsCount } from '../index.js';
+import getRandomNumber from '../helpers.js';
 
 const getGCD = (firstNum, SecondNum) => {
   let num1 = firstNum;
@@ -20,7 +21,7 @@ const getgcdGameInfo = () => {
   const gameAnswers = [];
   const gameRules = 'Find the greatest common divisor of given numbers.';
 
-  for (let i = 0; i < 3; i += 1) {
+  for (let i = 0; i < roundsCount; i += 1) {
     const numForGame1 = getRandomNumber();
     const numForGame2 = getRandomNumber();
     const question = `${numForGame1} ${numForGame2}`;

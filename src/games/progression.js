@@ -1,4 +1,5 @@
-import { getRandomNumber, makeGameLogic } from '../index.js';
+import { makeGameLogic, roundsCount } from '../index.js';
+import getRandomNumber from '../helpers.js';
 
 const getProgression = () => {
   const progression = [];
@@ -18,7 +19,7 @@ const getProgressionGameInfo = () => {
   const gameAnswers = [];
   const gameRules = 'What number is missing in the progression?';
 
-  for (let i = 0; i < 3; i += 1) {
+  for (let i = 0; i < roundsCount; i += 1) {
     const progression = getProgression();
     const max = progression.length - 1;
     const indexHidenNumber = getRandomNumber(0, max);

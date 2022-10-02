@@ -1,4 +1,5 @@
-import { getRandomNumber, makeGameLogic } from '../index.js';
+import { makeGameLogic, roundsCount } from '../index.js';
+import getRandomNumber from '../helpers.js';
 
 const getCalcGameInfo = () => {
   const operators = ['-', '+', '*'];
@@ -6,7 +7,7 @@ const getCalcGameInfo = () => {
   const gameAnswers = [];
   const gameRules = 'What is the result of the expression?';
 
-  for (let i = 0; i < 3; i += 1) {
+  for (let i = 0; i < roundsCount; i += 1) {
     const num1 = getRandomNumber();
     const operator = operators[getRandomNumber(0, 2)];
     const num2 = getRandomNumber();
