@@ -1,4 +1,4 @@
-import { getRandomNumber, makeGameLogic } from '../src/index.js';
+import { getRandomNumber, makeGameLogic } from '../index.js';
 
 const isPrimeNumber = (number) => {
   for (let i = 2; i <= number / 2; i += 1) {

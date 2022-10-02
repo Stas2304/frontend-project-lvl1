@@ -1,4 +1,4 @@
-import { getRandomNumber, makeGameLogic } from '../src/index.js';
+import { getRandomNumber, makeGameLogic } from '../index.js';
 
 const getGCD = (firstNum, SecondNum) => {
   let num1 = firstNum;
