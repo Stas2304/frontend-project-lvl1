@@ -31,10 +31,10 @@ const getCalcGameInfo = () => {
   return { gameQuestions, gameAnswers, gameRules };
 };
 
-const calcGame = () => {
+const startCalcGame = () => {
   const gameInfo = getCalcGameInfo();
 
   makeGameLogic(gameInfo);
 };
 
-export default calcGame;
+export default startCalcGame;

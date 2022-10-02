@@ -33,10 +33,10 @@ const getProgressionGameInfo = () => {
   return { gameQuestions, gameAnswers, gameRules };
 };
 
-const progressionGame = () => {
+const startProgressionGame = () => {
   const gameInfo = getProgressionGameInfo();
 
   makeGameLogic(gameInfo);
 };
 
-export default progressionGame;
+export default startProgressionGame;

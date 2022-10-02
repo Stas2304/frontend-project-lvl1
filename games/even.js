@@ -16,10 +16,10 @@ const getEvenGameInfo = () => {
   return { gameQuestions, gameAnswers, gameRules };
 };
 
-const evenGame = () => {
+const startEvenGame = () => {
   const gameInfo = getEvenGameInfo();
 
   makeGameLogic(gameInfo);
 };
 
-export default evenGame;
+export default startEvenGame;

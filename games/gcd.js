@@ -33,10 +33,10 @@ const getgcdGameInfo = () => {
   return { gameQuestions, gameAnswers, gameRules };
 };
 
-const gcdGame = () => {
+const startGcdGame = () => {
   const gameInfo = getgcdGameInfo();
 
   makeGameLogic(gameInfo);
 };
 
-export default gcdGame;
+export default startGcdGame;

@@ -25,10 +25,10 @@ const getPrimeGameInfo = () => {
   return { gameQuestions, gameAnswers, gameRules };
 };
 
-const primeGame = () => {
+const startPrimeGame = () => {
   const gameInfo = getPrimeGameInfo();
 
   makeGameLogic(gameInfo);
 };
 
-export default primeGame;
+export default startPrimeGame;
