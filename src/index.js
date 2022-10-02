@@ -8,24 +8,21 @@ const getUserName = () => {
   return userName;
 };
 
-export const getRandomNumber = (min = 1, max = 100) => {
-  const randomNumber = Math.round((Math.random() * (max - min))) + min;
-  return randomNumber;
-};
+export const roundsCount = 3;
 
-export const makeGameLogic = (gameInfo) => {
+export const makeGameLogic = (gameQuestionsAndAnswers) => {
   greeting();
 
   const userName = getUserName();
 
-  console.log(gameInfo.gameRules);
+  console.log(gameQuestionsAndAnswers.gameRules);
 
-  for (let i = 0; i < 3; i += 1) {
-    const question = gameInfo.gameQuestions[i];
+  for (let i = 0; i < roundsCount; i += 1) {
+    const question = gameQuestionsAndAnswers.gameQuestions[i];
     console.log(`Question: ${question}`);
     const userAnswer = readlineSync.question('Your answer: ');
 
-    const correctAnswer = gameInfo.gameAnswers[i];
+    const correctAnswer = gameQuestionsAndAnswers.gameAnswers[i];
     if (correctAnswer !== userAnswer) {
       const wrongAnswer = console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.
 Let's try again, ${userName}!`);
