@@ -35,9 +35,9 @@ const getProgressionGameInfo = () => {
 };
 
 const startProgressionGame = () => {
-  const gameInfo = getProgressionGameInfo();
+  const gameQuestionsAndAnswers = getProgressionGameInfo();
 
-  makeGameLogic(gameInfo);
+  makeGameLogic(gameQuestionsAndAnswers);
 };
 
 export default startProgressionGame;

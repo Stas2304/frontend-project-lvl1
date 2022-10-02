@@ -27,9 +27,9 @@ const getPrimeGameInfo = () => {
 };
 
 const startPrimeGame = () => {
-  const gameInfo = getPrimeGameInfo();
+  const gameQuestionsAndAnswers = getPrimeGameInfo();
 
-  makeGameLogic(gameInfo);
+  makeGameLogic(gameQuestionsAndAnswers);
 };
 
 export default startPrimeGame;

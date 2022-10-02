@@ -33,9 +33,9 @@ const getCalcGameInfo = () => {
 };
 
 const startCalcGame = () => {
-  const gameInfo = getCalcGameInfo();
+  const gameQuestionsAndAnswers = getCalcGameInfo();
 
-  makeGameLogic(gameInfo);
+  makeGameLogic(gameQuestionsAndAnswers);
 };
 
 export default startCalcGame;

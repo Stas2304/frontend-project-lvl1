@@ -35,9 +35,9 @@ const getgcdGameInfo = () => {
 };
 
 const startGcdGame = () => {
-  const gameInfo = getgcdGameInfo();
+  const gameQuestionsAndAnswers = getgcdGameInfo();
 
-  makeGameLogic(gameInfo);
+  makeGameLogic(gameQuestionsAndAnswers);
 };
 
 export default startGcdGame;

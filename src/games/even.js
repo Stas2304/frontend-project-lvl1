@@ -18,9 +18,9 @@ const getEvenGameInfo = () => {
 };
 
 const startEvenGame = () => {
-  const gameInfo = getEvenGameInfo();
+  const gameQuestionsAndAnswers = getEvenGameInfo();
 
-  makeGameLogic(gameInfo);
+  makeGameLogic(gameQuestionsAndAnswers);
 };
 
 export default startEvenGame;
