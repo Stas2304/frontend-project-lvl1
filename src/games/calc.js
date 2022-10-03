@@ -7,6 +7,25 @@ const getCalcGameInfo = () => {
   const gameAnswers = [];
   const gameRules = 'What is the result of the expression?';
 
+  const getAnswerForCalc = (num1, operator, num2) => {
+    let answer;
+
+    switch (operator) {
+      case '-':
+        answer = num1 - num2;
+        break;
+      case '+':
+        answer = num1 + num2;
+        break;
+      case '*':
+        answer = num1 * num2;
+        break;
+      default:
+        throw new Error(`Unknown operator state: '${operator}'!`);
+    }
+    return answer;
+  };
+
   for (let i = 0; i < roundsCount; i += 1) {
     const num1 = getRandomNumber();
     const operator = operators[getRandomNumber(0, 2)];
@@ -15,17 +34,7 @@ const getCalcGameInfo = () => {
     const question = `${num1} ${operator} ${num2}`;
     gameQuestions.push(question);
 
-    let answer;
-    switch (operator) {
-      case '-':
-        answer = num1 - num2;
-        break;
-      case '+':
-        answer = num1 + num2;
-        break;
-      default:
-        answer = num1 * num2;
-    }
+    const answer = getAnswerForCalc(num1, operator, num2);
     gameAnswers.push(String(answer));
   }
 
