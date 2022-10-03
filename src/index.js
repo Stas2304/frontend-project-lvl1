@@ -24,14 +24,11 @@ export const makeGameLogic = (gameQuestionsAndAnswers) => {
 
     const correctAnswer = gameQuestionsAndAnswers.gameAnswers[i];
     if (correctAnswer !== userAnswer) {
-      const wrongAnswer = console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.
 Let's try again, ${userName}!`);
-
-      return wrongAnswer;
+      return;
     }
     console.log('Correct!');
   }
-  const congratulations = console.log(`Congratulations, ${userName}!`);
-
-  return congratulations;
+  console.log(`Congratulations, ${userName}!`);
 };
