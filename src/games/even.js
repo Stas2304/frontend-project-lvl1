@@ -4,7 +4,7 @@ import getRandomNumber from '../helpers.js';
 const getEvenGameInfo = () => {
   const gameQuestions = [];
   const gameAnswers = [];
-  const gameRules = "Answer 'yes' if number even otherwise answer 'no'.";
+  const gameRules = 'Answer "yes" if the number is even, otherwise answer "no".';
 
   for (let i = 0; i < roundsCount; i += 1) {
     const numberForGame = getRandomNumber();
