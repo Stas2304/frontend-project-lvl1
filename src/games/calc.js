@@ -1,30 +1,30 @@
 import { makeGameLogic, roundsCount } from '../index.js';
 import getRandomNumber from '../helpers.js';
 
+const getAnswerForCalc = (num1, operator, num2) => {
+  let answer;
+
+  switch (operator) {
+    case '-':
+      answer = num1 - num2;
+      break;
+    case '+':
+      answer = num1 + num2;
+      break;
+    case '*':
+      answer = num1 * num2;
+      break;
+    default:
+      throw new Error(`Unknown operator state: '${operator}'!`);
+  }
+  return answer;
+};
+
 const getCalcGameInfo = () => {
   const operators = ['-', '+', '*'];
   const gameQuestions = [];
   const gameAnswers = [];
   const gameRules = 'What is the result of the expression?';
-
-  const getAnswerForCalc = (num1, operator, num2) => {
-    let answer;
-
-    switch (operator) {
-      case '-':
-        answer = num1 - num2;
-        break;
-      case '+':
-        answer = num1 + num2;
-        break;
-      case '*':
-        answer = num1 * num2;
-        break;
-      default:
-        throw new Error(`Unknown operator state: '${operator}'!`);
-    }
-    return answer;
-  };
 
   for (let i = 0; i < roundsCount; i += 1) {
     const num1 = getRandomNumber();
