@@ -18,7 +18,7 @@ const getGCD = (firstNum, SecondNum) => {
 
 const getgcdGameInfo = () => {
   const gameQuestions = [];
-  const gameAnswers = [];
+  const correctGameAnswers = [];
   const gameRules = 'Find the greatest common divisor of given numbers.';
 
   for (let i = 0; i < roundsCount; i += 1) {
@@ -28,10 +28,10 @@ const getgcdGameInfo = () => {
     gameQuestions.push(question);
 
     const correctAnswer = getGCD(numForGame1, numForGame2);
-    gameAnswers.push(String(correctAnswer));
+    correctGameAnswers.push(String(correctAnswer));
   }
 
-  return { gameQuestions, gameAnswers, gameRules };
+  return { gameQuestions, correctGameAnswers, gameRules };
 };
 
 const startGcdGame = () => {

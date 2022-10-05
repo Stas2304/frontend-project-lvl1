@@ -22,7 +22,7 @@ export const startGameProcess = (gameQuestionsAndAnswers) => {
     console.log(`Question: ${question}`);
     const userAnswer = readlineSync.question('Your answer: ');
 
-    const correctAnswer = gameQuestionsAndAnswers.gameAnswers[i];
+    const correctAnswer = gameQuestionsAndAnswers.correctGameAnswers[i];
     if (correctAnswer !== userAnswer) {
       console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.
 Let's try again, ${userName}!`);

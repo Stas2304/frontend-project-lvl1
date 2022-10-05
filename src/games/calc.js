@@ -2,28 +2,22 @@ import { startGameProcess, roundsCount } from '../index.js';
 import getRandomNumber from '../helpers.js';
 
 const getAnswerForCalc = (num1, operator, num2) => {
-  let answer;
-
   switch (operator) {
     case '-':
-      answer = num1 - num2;
-      break;
+      return num1 - num2;
     case '+':
-      answer = num1 + num2;
-      break;
+      return num1 + num2;
     case '*':
-      answer = num1 * num2;
-      break;
+      return num1 * num2;
     default:
       throw new Error(`Unknown operator state: '${operator}'!`);
   }
-  return answer;
 };
 
 const getCalcGameInfo = () => {
   const operators = ['-', '+', '*'];
   const gameQuestions = [];
-  const gameAnswers = [];
+  const correctGameAnswers = [];
   const gameRules = 'What is the result of the expression?';
 
   for (let i = 0; i < roundsCount; i += 1) {
@@ -35,10 +29,10 @@ const getCalcGameInfo = () => {
     gameQuestions.push(question);
 
     const answer = getAnswerForCalc(num1, operator, num2);
-    gameAnswers.push(String(answer));
+    correctGameAnswers.push(String(answer));
   }
 
-  return { gameQuestions, gameAnswers, gameRules };
+  return { gameQuestions, correctGameAnswers, gameRules };
 };
 
 const startCalcGame = () => {

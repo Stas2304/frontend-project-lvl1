@@ -3,7 +3,7 @@ import getRandomNumber from '../helpers.js';
 
 const getEvenGameInfo = () => {
   const gameQuestions = [];
-  const gameAnswers = [];
+  const correctGameAnswers = [];
   const gameRules = 'Answer "yes" if the number is even, otherwise answer "no".';
 
   for (let i = 0; i < roundsCount; i += 1) {
@@ -11,10 +11,10 @@ const getEvenGameInfo = () => {
     gameQuestions.push(numberForGame);
 
     const correctAnswer = numberForGame % 2 === 0 ? 'yes' : 'no';
-    gameAnswers.push(correctAnswer);
+    correctGameAnswers.push(correctAnswer);
   }
 
-  return { gameQuestions, gameAnswers, gameRules };
+  return { gameQuestions, correctGameAnswers, gameRules };
 };
 
 const startEvenGame = () => {

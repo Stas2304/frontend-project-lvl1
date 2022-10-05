@@ -12,7 +12,7 @@ const isPrimeNumber = (number) => {
 
 const getPrimeGameInfo = () => {
   const gameQuestions = [];
-  const gameAnswers = [];
+  const correctGameAnswers = [];
   const gameRules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
   for (let i = 0; i < roundsCount; i += 1) {
@@ -20,10 +20,10 @@ const getPrimeGameInfo = () => {
     gameQuestions.push(numberForGame);
 
     const correctAnswer = isPrimeNumber(numberForGame);
-    gameAnswers.push(correctAnswer);
+    correctGameAnswers.push(correctAnswer);
   }
 
-  return { gameQuestions, gameAnswers, gameRules };
+  return { gameQuestions, correctGameAnswers, gameRules };
 };
 
 const startPrimeGame = () => {

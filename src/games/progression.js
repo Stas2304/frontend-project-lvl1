@@ -16,7 +16,7 @@ const getProgression = () => {
 
 const getProgressionGameInfo = () => {
   const gameQuestions = [];
-  const gameAnswers = [];
+  const correctGameAnswers = [];
   const gameRules = 'What number is missing in the progression?';
 
   for (let i = 0; i < roundsCount; i += 1) {
@@ -25,13 +25,13 @@ const getProgressionGameInfo = () => {
     const indexHidenNumber = getRandomNumber(0, max);
 
     const correctAnswer = progression[indexHidenNumber];
-    gameAnswers.push(String(correctAnswer));
+    correctGameAnswers.push(String(correctAnswer));
 
     progression[indexHidenNumber] = '..';
     const question = progression.toString().replace(/,/g, ' ');
     gameQuestions.push(question);
   }
-  return { gameQuestions, gameAnswers, gameRules };
+  return { gameQuestions, correctGameAnswers, gameRules };
 };
 
 const startProgressionGame = () => {
