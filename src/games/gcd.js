@@ -1,19 +1,9 @@
 import { startGameProcess, roundsCount } from '../index.js';
 import getRandomNumber from '../helpers.js';
 
-const getGCD = (firstNum, SecondNum) => {
-  let num1 = firstNum;
-  let num2 = SecondNum;
-  let remainder;
-
-  do {
-    remainder = num1 % num2;
-    if (remainder !== 0) {
-      num1 = num2;
-      num2 = remainder;
-    }
-  } while (remainder !== 0);
-  return num2;
+const getGCD = (num1, num2) => {
+  const remainder = num1 % num2;
+  return num2 === 0 ? num1 : getGCD(num2, remainder);
 };
 
 const getgcdGameInfo = () => {
