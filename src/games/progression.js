@@ -1,4 +1,4 @@
-import { makeGameLogic, roundsCount } from '../index.js';
+import { startGameProcess, roundsCount } from '../index.js';
 import getRandomNumber from '../helpers.js';
 
 const getProgression = () => {
@@ -37,7 +37,7 @@ const getProgressionGameInfo = () => {
 const startProgressionGame = () => {
   const gameQuestionsAndAnswers = getProgressionGameInfo();
 
-  makeGameLogic(gameQuestionsAndAnswers);
+  startGameProcess(gameQuestionsAndAnswers);
 };
 
 export default startProgressionGame;

@@ -1,4 +1,4 @@
-import { makeGameLogic, roundsCount } from '../index.js';
+import { startGameProcess, roundsCount } from '../index.js';
 import getRandomNumber from '../helpers.js';
 
 const getAnswerForCalc = (num1, operator, num2) => {
@@ -44,7 +44,7 @@ const getCalcGameInfo = () => {
 const startCalcGame = () => {
   const gameQuestionsAndAnswers = getCalcGameInfo();
 
-  makeGameLogic(gameQuestionsAndAnswers);
+  startGameProcess(gameQuestionsAndAnswers);
 };
 
 export default startCalcGame;

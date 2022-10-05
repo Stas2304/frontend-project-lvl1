@@ -1,4 +1,4 @@
-import { makeGameLogic, roundsCount } from '../index.js';
+import { startGameProcess, roundsCount } from '../index.js';
 import getRandomNumber from '../helpers.js';
 
 const getEvenGameInfo = () => {
@@ -20,7 +20,7 @@ const getEvenGameInfo = () => {
 const startEvenGame = () => {
   const gameQuestionsAndAnswers = getEvenGameInfo();
 
-  makeGameLogic(gameQuestionsAndAnswers);
+  startGameProcess(gameQuestionsAndAnswers);
 };
 
 export default startEvenGame;

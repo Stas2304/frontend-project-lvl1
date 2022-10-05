@@ -1,4 +1,4 @@
-import { makeGameLogic, roundsCount } from '../index.js';
+import { startGameProcess, roundsCount } from '../index.js';
 import getRandomNumber from '../helpers.js';
 
 const isPrimeNumber = (number) => {
@@ -29,7 +29,7 @@ const getPrimeGameInfo = () => {
 const startPrimeGame = () => {
   const gameQuestionsAndAnswers = getPrimeGameInfo();
 
-  makeGameLogic(gameQuestionsAndAnswers);
+  startGameProcess(gameQuestionsAndAnswers);
 };
 
 export default startPrimeGame;

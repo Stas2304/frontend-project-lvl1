@@ -1,4 +1,4 @@
-import { makeGameLogic, roundsCount } from '../index.js';
+import { startGameProcess, roundsCount } from '../index.js';
 import getRandomNumber from '../helpers.js';
 
 const getGCD = (firstNum, SecondNum) => {
@@ -37,7 +37,7 @@ const getgcdGameInfo = () => {
 const startGcdGame = () => {
   const gameQuestionsAndAnswers = getgcdGameInfo();
 
-  makeGameLogic(gameQuestionsAndAnswers);
+  startGameProcess(gameQuestionsAndAnswers);
 };
 
 export default startGcdGame;
