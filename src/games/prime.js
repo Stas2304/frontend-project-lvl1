@@ -4,10 +4,10 @@ import getRandomNumber from '../helpers.js';
 const isPrimeNumber = (number) => {
   for (let i = 2; i <= number / 2; i += 1) {
     if (number % i === 0) {
-      return 'no';
+      return false;
     }
   }
-  return number < 2 ? 'no' : 'yes';
+  return number > 1;
 };
 
 const getPrimeGameInfo = () => {
@@ -19,7 +19,7 @@ const getPrimeGameInfo = () => {
     const numberForGame = getRandomNumber();
     gameQuestions.push(numberForGame);
 
-    const correctAnswer = isPrimeNumber(numberForGame);
+    const correctAnswer = isPrimeNumber(numberForGame) ? 'yes' : 'no';
     correctGameAnswers.push(correctAnswer);
   }
 
