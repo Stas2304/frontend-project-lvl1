@@ -5,8 +5,8 @@ const isEven = (number) => number % 2 === 0;
 
 const getEvenGameInfo = () => {
   const gameQuestions = [];
-  const correctGameAnswers = [];
   const gameRules = 'Answer "yes" if the number is even, otherwise answer "no".';
+  const correctGameAnswers = [];
 
   for (let i = 0; i < roundsCount; i += 1) {
     const numberForGame = getRandomNumber();
