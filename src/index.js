@@ -10,19 +10,19 @@ const getUserName = () => {
 
 export const roundsCount = 3;
 
-export const startGameProcess = (gameQuestionsAndAnswers) => {
+export const startGameProcess = ({ gameQuestions, correctGameAnswers, gameRules }) => {
   displayGreeting();
 
   const userName = getUserName();
 
-  console.log(gameQuestionsAndAnswers.gameRules);
+  console.log(gameRules);
 
   for (let i = 0; i < roundsCount; i += 1) {
-    const question = gameQuestionsAndAnswers.gameQuestions[i];
+    const question = gameQuestions[i];
     console.log(`Question: ${question}`);
     const userAnswer = readlineSync.question('Your answer: ');
 
-    const correctAnswer = gameQuestionsAndAnswers.correctGameAnswers[i];
+    const correctAnswer = correctGameAnswers[i];
     if (correctAnswer !== userAnswer) {
       console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.
 Let's try again, ${userName}!`);
