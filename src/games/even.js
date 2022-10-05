@@ -1,6 +1,8 @@
 import { startGameProcess, roundsCount } from '../index.js';
 import getRandomNumber from '../helpers.js';
 
+const isEven = (number) => number % 2 === 0;
+
 const getEvenGameInfo = () => {
   const gameQuestions = [];
   const correctGameAnswers = [];
@@ -10,7 +12,7 @@ const getEvenGameInfo = () => {
     const numberForGame = getRandomNumber();
     gameQuestions.push(numberForGame);
 
-    const correctAnswer = numberForGame % 2 === 0 ? 'yes' : 'no';
+    const correctAnswer = isEven(numberForGame) ? 'yes' : 'no';
     correctGameAnswers.push(correctAnswer);
   }
 
