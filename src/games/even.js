@@ -11,7 +11,6 @@ const getEvenGameInfo = () => {
   for (let i = 0; i < roundsCount; i += 1) {
     const numberForGame = getRandomNumber();
     gameQuestions.push(numberForGame);
-
     const correctAnswer = isEven(numberForGame) ? 'yes' : 'no';
     correctGameAnswers.push(correctAnswer);
   }
