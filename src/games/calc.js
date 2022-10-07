@@ -14,7 +14,7 @@ const getAnswerForCalc = (num1, operator, num2) => {
   }
 };
 
-const getCalcGameInfo = () => {
+const generateQuestionsAnswersForCalcGame = () => {
   const operators = ['-', '+', '*'];
   const gameQuestions = [];
   const correctGameAnswers = [];
@@ -36,7 +36,7 @@ const getCalcGameInfo = () => {
 };
 
 const startCalcGame = () => {
-  const gameQuestionsAndAnswers = getCalcGameInfo();
+  const gameQuestionsAndAnswers = generateQuestionsAnswersForCalcGame();
 
   startGameProcess(gameQuestionsAndAnswers);
 };

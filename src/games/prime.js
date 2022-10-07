@@ -10,7 +10,7 @@ const isPrimeNumber = (number) => {
   return number > 1;
 };
 
-const getPrimeGameInfo = () => {
+const generateQuestionsAnswersForPrimeGame = () => {
   const gameQuestions = [];
   const correctGameAnswers = [];
   const gameRules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
@@ -27,7 +27,7 @@ const getPrimeGameInfo = () => {
 };
 
 const startPrimeGame = () => {
-  const gameQuestionsAndAnswers = getPrimeGameInfo();
+  const gameQuestionsAndAnswers = generateQuestionsAnswersForPrimeGame();
 
   startGameProcess(gameQuestionsAndAnswers);
 };

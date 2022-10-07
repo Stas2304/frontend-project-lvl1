@@ -14,7 +14,7 @@ const getProgression = () => {
   return progression;
 };
 
-const getProgressionGameInfo = () => {
+const generateQuestionsAnswersForProgressionGame = () => {
   const gameQuestions = [];
   const correctGameAnswers = [];
   const gameRules = 'What number is missing in the progression?';
@@ -35,7 +35,7 @@ const getProgressionGameInfo = () => {
 };
 
 const startProgressionGame = () => {
-  const gameQuestionsAndAnswers = getProgressionGameInfo();
+  const gameQuestionsAndAnswers = generateQuestionsAnswersForProgressionGame();
 
   startGameProcess(gameQuestionsAndAnswers);
 };

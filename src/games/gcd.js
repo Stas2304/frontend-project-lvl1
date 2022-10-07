@@ -6,7 +6,7 @@ const getGCD = (num1, num2) => {
   return num2 === 0 ? num1 : getGCD(num2, remainder);
 };
 
-const getgcdGameInfo = () => {
+const generateQuestionsAnswersForGCDGame = () => {
   const gameQuestions = [];
   const correctGameAnswers = [];
   const gameRules = 'Find the greatest common divisor of given numbers.';
@@ -25,7 +25,7 @@ const getgcdGameInfo = () => {
 };
 
 const startGcdGame = () => {
-  const gameQuestionsAndAnswers = getgcdGameInfo();
+  const gameQuestionsAndAnswers = generateQuestionsAnswersForGCDGame();
 
   startGameProcess(gameQuestionsAndAnswers);
 };

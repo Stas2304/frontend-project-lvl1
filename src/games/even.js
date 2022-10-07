@@ -3,7 +3,7 @@ import getRandomNumber from '../helpers.js';
 
 const isEven = (number) => number % 2 === 0;
 
-const getEvenGameInfo = () => {
+const generateQuestionsAnswersForEvenGame = () => {
   const gameQuestions = [];
   const gameRules = 'Answer "yes" if the number is even, otherwise answer "no".';
   const correctGameAnswers = [];
@@ -20,7 +20,7 @@ const getEvenGameInfo = () => {
 };
 
 const startEvenGame = () => {
-  const gameQuestionsAndAnswers = getEvenGameInfo();
+  const gameQuestionsAndAnswers = generateQuestionsAnswersForEvenGame();
 
   startGameProcess(gameQuestionsAndAnswers);
 };
